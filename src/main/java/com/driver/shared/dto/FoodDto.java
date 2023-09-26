@@ -2,6 +2,7 @@ package com.driver.shared.dto;
 
 import java.io.Serializable;
 
+
 public class FoodDto{
 
 	private long id;

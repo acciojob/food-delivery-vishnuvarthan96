@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity(name = "foods")
+
 public class FoodEntity{
 	@Id
 	@GeneratedValue
