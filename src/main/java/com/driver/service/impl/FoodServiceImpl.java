@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FoodServiceImpl implements FoodService {
+
     @Autowired
     FoodRepository foodRepository;
     @Override
@@ -21,6 +22,7 @@ public class FoodServiceImpl implements FoodService {
        f.setFoodCategory(food.getFoodCategory());
        f.setFoodPrice(food.getFoodPrice());
         foodRepository.save(f);
+        food.setId(f.getId());
         return food;
     }
 
@@ -42,6 +44,8 @@ public class FoodServiceImpl implements FoodService {
         food.setFoodName(foodDetails.getFoodName());
         food.setFoodPrice(foodDetails.getFoodPrice());
         food.setFoodCategory(foodDetails.getFoodCategory());
+        food.setFoodId(foodDetails.getFoodId());
+        food.setId(foodDetails.getId());
         foodRepository.save(food);
 
         return foodDetails;

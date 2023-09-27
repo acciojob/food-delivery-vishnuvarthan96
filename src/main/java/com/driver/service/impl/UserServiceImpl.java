@@ -52,6 +52,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserDto updateUser(String userId, UserDto user) throws Exception {
         UserEntity user1=userRepository.findByUserId(userId);
+        user1.setId(user.getId());
         user1.setUserId(user.getUserId());
         user1.setEmail(user.getEmail());
         user1.setFirstName(user.getFirstName());
