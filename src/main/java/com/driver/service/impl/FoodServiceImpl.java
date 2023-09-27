@@ -22,7 +22,6 @@ public class FoodServiceImpl implements FoodService {
        f.setFoodCategory(food.getFoodCategory());
        f.setFoodPrice(food.getFoodPrice());
         foodRepository.save(f);
-        food.setId(f.getId());
         return food;
     }
 
