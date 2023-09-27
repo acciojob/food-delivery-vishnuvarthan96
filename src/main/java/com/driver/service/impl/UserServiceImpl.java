@@ -19,7 +19,7 @@ public class UserServiceImpl implements UserService {
         user1.setUserId(user.getUserId());
         user1.setFirstName(user.getFirstName());
         user1.setLastName(user.getLastName());
-        userRepository.save(user1);
+       user1 = userRepository.save(user1);
         user.setId(user1.getId());
         return user;
     }
@@ -28,6 +28,7 @@ public class UserServiceImpl implements UserService {
     public UserDto getUser(String email) throws Exception {
         UserEntity user=userRepository.findByEmail(email);
         UserDto dto=new UserDto();
+        dto.setId(user.getId());
         dto.setUserId(user.getUserId());
         dto.setEmail(user.getEmail());
         dto.setFirstName(user.getFirstName());
@@ -70,6 +71,7 @@ public class UserServiceImpl implements UserService {
         List<UserDto> users=new ArrayList<>();
         for(UserEntity user: userRepository.findAll()){
             UserDto dto=new UserDto();
+            dto.setId(user.getId());
             dto.setUserId(user.getUserId());
             dto.setFirstName(user.getFirstName());
             dto.setLastName(user.getLastName());

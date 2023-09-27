@@ -21,7 +21,7 @@ public class OrderServiceImpl implements OrderService {
         orderEntity.setUserId(order.getUserId());
         orderEntity.setStatus(Boolean.TRUE);
         orderEntity.setOrderId(String.valueOf(UUID.randomUUID()));
-        orderRepository.save(orderEntity);
+        orderEntity=orderRepository.save(orderEntity);
         order.setOrderId(orderEntity.getOrderId());
         order.setStatus(orderEntity.isStatus());
         order.setId(orderEntity.getId());
